@@ -7,14 +7,12 @@ import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
-import static javax.swing.JOptionPane.showMessageDialog;
-
 public class TimeHandling {
 
     public static boolean validateInputDate(String dateFrom, String dateTo){
         //check ISO format
         if(!isValidIsoDateTime(dateFrom) || !isValidIsoDateTime(dateTo)){
-            showMessageDialog(null, "DateFrom/DateTo must be in ISO-8601 format. Eg: 2019-08-01T00:00:00Z\n" +
+            System.out.println("DateFrom/DateTo must be in ISO-8601 format. Eg: 2019-08-01T00:00:00Z\n" +
                     "Please run again with appropriate format.\n" +
                     "Program stopped with invalid inputs");
             return false;
@@ -24,7 +22,7 @@ public class TimeHandling {
         Instant isDateFrom = Instant.parse(dateFrom);
         Instant isDateTo = Instant.parse(dateTo);
         if(isDateFrom.compareTo(isDateTo) >= 0){
-            showMessageDialog(null, "DateFrom cannot be equal or greater than DateTo");
+            System.out.println("DateFrom cannot be equal or greater than DateTo");
             return false;
         }
 

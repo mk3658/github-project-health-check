@@ -12,8 +12,6 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
-import static javax.swing.JOptionPane.showMessageDialog;
-
 /**
  * @author Quan Kien Minh
  *
@@ -42,7 +40,7 @@ public class HealthScoreCalculator {
             isDateTo = Instant.parse(dateTo);
 
         } else {
-            showMessageDialog(null, "Please use \"gradle run\" to extract last one hour data.\n"
+            System.out.println("Please use \"gradle run\" to extract last one hour data.\n"
                     + "Otherwise, \"gradle run --args='dateFrom dateTo'\" to extract metric from dateFrom to dateTo.\n"
                     + "Note: Date must be in ISO 8601 format, eg. 2019-08-01T00:00:00Z.");
             return;
