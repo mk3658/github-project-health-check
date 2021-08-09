@@ -28,7 +28,8 @@ All external libraries are included in build.gradle file.
 - Besides, the project uses gson which can handle file structure.
 
 ### 2. How would you improve your code for performance?
-- We can store data into database, because database can resolve the data storage and data retrieval problems.
+- We have to acknowledge that HashMap's optimistic constant time of element retrieval O(1) comes from the power of hashing. However, in the worst-case scenario, when hash code collison happens more often, our HashMap is downgraded to a linked list. Consequently, instead of O(1) lookup time, we get a very unsatisfactory O(n).
+- Thus, to enhance code performance of the assignment, I suppose we can use database to store each event with generated id, it would help solve the retrival problems in the worst case when using HashMap.
 
 ### 3. What code would you refactor for readability and maintainability?
-- To overcome this issue, we can try use a database to store all the information from file, or may use Google BigQuery API, Spark, etc.
+- Maybe I would like refactor the DataManagement class. I will separate the parseJsonToFactMap method into smaller method in order to write unit tests and more readable and maintainable. 
