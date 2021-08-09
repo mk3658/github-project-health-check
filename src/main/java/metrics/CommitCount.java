@@ -114,7 +114,6 @@ public class CommitCount {
 		if (commitCountMap.containsKey(key)) {
 			result = new ArrayList<>();
 			result.add(commitCountMap.get(key)); // Number of commits
-			result.add(maxNumberOfCommits); // Maximum of commits
 			result.add(commitHealthMetricMap.get(key)); // actual health of this project based on this metric
 		}
 		return result;

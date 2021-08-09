@@ -172,7 +172,6 @@ public class OpenedIssue {
 		if (openedIssueMetricMap.containsKey(key)) {
 			result = new ArrayList<>();
 			result.add(openedIssueMetricMap.get(key).get(0)); // the average duration for the opened issue
-			result.add(minOpenedDuration); // the minimum duration for the opened issue
 			result.add(openedIssueMetricMap.get(key).get(1)); // the actual health metric for this opened issue
 		}
 		return result;

@@ -88,8 +88,8 @@ public class FileHandling {
 
 	public static void extractCsv(List<HealthReport> report) throws IOException {
 		FileWriter writer = new FileWriter(HEALTH_SCORE_OUTPUT_PATH);
-		writer.write("org, repoName, healthMetric, numberOfCommit, maximumNumberOfCommit, metricForCommitCount, averageDurationForOpenedIssue, minDurationForOpenedIssue, "
-				+ "metricForOpenedIssue, averageDurationForMergedPullRequest, minDurationForMergedPullRequest, metricForMergedPullRequest, developerRatio, maximumDeveloperRatio, "
+		writer.write("org, repoName, healthMetric, numberOfCommit, metricForCommitCount, averageDurationForOpenedIssue, "
+				+ "metricForOpenedIssue, averageDurationForMergedPullRequest, metricForMergedPullRequest, developerRatio, "
 				+ "metricForDeveloperRatio\n");
 		for (HealthReport r : report) {
 			writer.write(r.toString());

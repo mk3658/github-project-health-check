@@ -160,7 +160,6 @@ public class MergedPullRequest {
 		if (mergedPullRequestMetricMap.containsKey(key)) {
 			result = new ArrayList<>();
 			result.add(mergedPullRequestMetricMap.get(key).get(0)); // the average merged duration
-			result.add(minMergedDuration); // the minimum merged duration
 			result.add(mergedPullRequestMetricMap.get(key).get(1)); // the actual health metric for merged pull request
 		}
 		return result;

@@ -90,23 +90,23 @@ public class DataManagement {
 			
 			if (commitCountResult != null) {
 				r.setNumberOfCommit((Double) commitCountResult.get(0));
-				r.setMaximumNumberOfCommit((Double) commitCountResult.get(1));
-				r.addToHealthMetric((Double) commitCountResult.get(2)*0.25);
+				r.setMetricForCommitCount((Double) commitCountResult.get(1)*0.25);
+				r.addToHealthMetric((Double) commitCountResult.get(1)*0.25);
 			}
 			if (openedIssueResult != null) {
 				r.setAverageDurationForOpenedIssue((Long) openedIssueResult.get(0));
-				r.setMinDurationForOpenedIssue((Long) openedIssueResult.get(1));
-				r.addToHealthMetric((Double) openedIssueResult.get(2)*0.25);
+				r.setMetricForOpenedIssue((Double) openedIssueResult.get(1)*0.25);
+				r.addToHealthMetric((Double) openedIssueResult.get(1)*0.25);
 			}
 			if (mergedPullRequestResult != null) {
 				r.setAverageDurationForMergedPullRequest((Long) mergedPullRequestResult.get(0));
-				r.setMinDurationForMergedPullRequest((Long) mergedPullRequestResult.get(1));
-				r.addToHealthMetric((Double) mergedPullRequestResult.get(2)*0.25);
+				r.setMetricForMergedPullRequest((Double) mergedPullRequestResult.get(1)*0.25);
+				r.addToHealthMetric((Double) mergedPullRequestResult.get(1)*0.25);
 			}
 			if (commitDeveloperRatioResult != null) {
 				r.setDeveloperRatio((Double) commitDeveloperRatioResult.get(0));
-				r.setMaximumDeveloperRatio((Double) commitDeveloperRatioResult.get(1));
-				r.addToHealthMetric((Double) commitDeveloperRatioResult.get(2)*0.25);
+				r.setMetricForDeveloperRatio((Double) commitDeveloperRatioResult.get(1)*0.25);
+				r.addToHealthMetric((Double) commitDeveloperRatioResult.get(1)*0.25);
 			}
 		}
 		report.sort(Comparator.comparing(HealthReport::getHealthMetric).reversed());

@@ -11,19 +11,15 @@ public class HealthReport {
 	private Double healthMetric;
 	
 	private Double numberOfCommit;
-	private Double maximumNumberOfCommit;
 	private Double metricForCommitCount;
 	
 	private Long averageDurationForOpenedIssue;
-	private Long minDurationForOpenedIssue;
 	private Double metricForOpenedIssue;
 	
 	private Long averageDurationForMergedPullRequest;
-	private Long minDurationForMergedPullRequest;
 	private Double metricForMergedPullRequest; 
 	
 	private Double developerRatio;
-	private Double maximumDeveloperRatio;
 	private Double metricForDeveloperRatio;
 	
 	public HealthReport(String org, String repoName) {
@@ -68,14 +64,6 @@ public class HealthReport {
 		this.numberOfCommit = numberOfCommit;
 	}
 	
-	public Double getMaximumNumberOfCommit() {
-		return maximumNumberOfCommit;
-	}
-	
-	public void setMaximumNumberOfCommit(Double maximumNumberOfCommit) {
-		this.maximumNumberOfCommit = maximumNumberOfCommit;
-	}
-	
 	public Double getMetricForCommitCount() {
 		return metricForCommitCount;
 	}
@@ -90,14 +78,6 @@ public class HealthReport {
 	
 	public void setAverageDurationForOpenedIssue(Long averageDurationForOpenedIssue) {
 		this.averageDurationForOpenedIssue = averageDurationForOpenedIssue;
-	}
-	
-	public Long getMinDurationForOpenedIssue() {
-		return minDurationForOpenedIssue;
-	}
-	
-	public void setMinDurationForOpenedIssue(Long minDurationForOpenedIssue) {
-		this.minDurationForOpenedIssue = minDurationForOpenedIssue;
 	}
 	
 	public Double getMetricForOpenedIssue() {
@@ -116,14 +96,6 @@ public class HealthReport {
 		this.averageDurationForMergedPullRequest = averageDurationForMergedPullRequest;
 	}
 	
-	public Long getMinDurationForMergedPullRequest() {
-		return minDurationForMergedPullRequest;
-	}
-	
-	public void setMinDurationForMergedPullRequest(Long minDurationForMergedPullRequest) {
-		this.minDurationForMergedPullRequest = minDurationForMergedPullRequest;
-	}
-	
 	public Double getMetricForMergedPullRequest() {
 		return metricForMergedPullRequest;
 	}
@@ -140,14 +112,6 @@ public class HealthReport {
 		this.developerRatio = developerRatio;
 	}
 	
-	public Double getMaximumDeveloperRatio() {
-		return maximumDeveloperRatio;
-	}
-	
-	public void setMaximumDeveloperRatio(Double maximumDeveloperRatio) {
-		this.maximumDeveloperRatio = maximumDeveloperRatio;
-	}
-	
 	public Double getMetricForDeveloperRatio() {
 		return metricForDeveloperRatio;
 	}
@@ -159,12 +123,12 @@ public class HealthReport {
 	@Override
 	public String toString() {
 		return org + ", " + repoName + ", " + healthMetric
-				+ ", " + numberOfCommit + ", " + maximumNumberOfCommit
-				+ ", " + metricForCommitCount + ", " + averageDurationForOpenedIssue + ", " + minDurationForOpenedIssue
+				+ ", " + numberOfCommit
+				+ ", " + metricForCommitCount + ", " + averageDurationForOpenedIssue
 				+ ", " + metricForOpenedIssue + ", "
-				+ averageDurationForMergedPullRequest + ", "
-				+ minDurationForMergedPullRequest + ", " + metricForMergedPullRequest
-				+ ", " + developerRatio + ", " + maximumDeveloperRatio
+				+ averageDurationForMergedPullRequest
+				+ ", " + metricForMergedPullRequest
+				+ ", " + developerRatio 
 				+ ", " + metricForDeveloperRatio;
 	}
 }

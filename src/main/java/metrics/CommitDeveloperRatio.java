@@ -127,7 +127,6 @@ public class CommitDeveloperRatio {
 			Double temp = commitDeveloperMap.get(key) / (developerMap.get(key).size()*1.0);
 			result = new ArrayList<>();
 			result.add(temp); // the ratio of this project
-			result.add(maximumRatio); // the maximum project
 			result.add(commitHealthMetricMap.get(key)); // the actual health for this metric
 		} 
 		return result;
